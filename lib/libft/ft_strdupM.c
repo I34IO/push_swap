@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdupM.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 14:54:47 by razouani          #+#    #+#             */
+/*   Updated: 2024/03/08 14:54:55 by razouani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include<stdlib.h>
 
-char	*ft_strdupM(const char *s)
+char	*ft_strdupl(const char *s)
 {
 	char	*t;
 	int		i;

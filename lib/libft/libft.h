@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zizi <zizi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:33:05 by razouani          #+#    #+#             */
-/*   Updated: 2024/03/07 03:16:10 by zizi             ###   ########.fr       */
+/*   Updated: 2024/03/08 15:45:29 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 int					ft_lenPP(char	**map);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-char	*ft_strdupM(const char *s);
+char	*ft_strdupl(const char *s);
+long long int		ft_atoi_l(char *str);
+
 
 #endif

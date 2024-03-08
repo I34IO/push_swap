@@ -37,6 +37,7 @@ SRCS = ft_atoi.c\
 			ft_strlcat.c\
 			ft_lenPP.c\
 			ft_strdupM.c\
+			ft_atoi_l.c\
 
 BONUS = ft_lstnew_bonus.c\
 			ft_lstadd_front_bonus.c\

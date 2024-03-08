@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   argument.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zizi <zizi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:45:40 by zizi              #+#    #+#             */
-/*   Updated: 2024/03/07 04:57:10 by zizi             ###   ########.fr       */
+/*   Updated: 2024/03/08 17:06:22 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void split_av(char **av, t_argu *vars)
     vars->join_argu = av[1];
     while (av[i])
     {
-        vars->join_argu = ft_strdupM(vars->join_argu);
+        vars->join_argu = ft_strdupl(vars->join_argu);
         vars->join_argu = ft_strjoin(vars->join_argu, av[i]);
         i++;
     }
@@ -28,33 +28,27 @@ void split_av(char **av, t_argu *vars)
     return;
 }
 
-int    check_arg(t_argu *vars)
+int    check_arg(t_argu *vars, char **av)
 {
     int i;
 
-    i = 0;
+    i = 1;
+	if (!vars->split_argu)
+		return (0);
+	while (av[i])
+	{
+		if (!vars->split_argu[i - 1])
+			return (0);
+		i++;
+	}
+	i = 0;
     while (vars->split_argu[i])
     {
         if (check_sign(vars->split_argu[i]) == 0)
-            return (0);//all_free(vars);
-        if (fix_arg(vars->split_argu[i]) == 0)
-        i++;
-    }
-    return (1);
-}
-
-int     fix_arg(char *str)
-{
-    int i;
-
-    i = 0;
-    while (str[i])
-    {
-        if (str[0] == '0' || str[1] == '0')
-            while (str[i] == '0')
-                i++;
-        //je veux dupliquer la chaine sans les 0 pour avoir que le 5 (dans l'exemple de enzo) mias peut-on les suprimer ?
-        i++;
+			return (0);//all_free(vars);
+		if (ft_atoi_l(vars->split_argu[i]) > INT_MAX || ft_atoi_l(vars->split_argu[i]) < INT_MIN)
+			return (0);
+		i++;
     }
     return (1);
 }
@@ -64,41 +58,19 @@ int     check_sign(char *str)
     int i;
 
     i = 0;
+	if (!str)
+		return (0);
     while(str[i])
     {
-        if (str[0] == '+' || str[0] == '-')
+        if ((i == 0) && (str[0] == '+' || str[0] == '-'))
             i++;
-        else if (str[i] > '0' && str[i] < '9')
-        {
-            if (str[i] < '0' || str[i] > '9')
-                return (0);
+        if (str[i] >= '0' && str[i] <= '9')
             i++;
-        }
-        else
+        else if ((str[i] < '0' || str[i] > '9'))
             return (0);
+		i++;
     }
     return (1);
 }
 
-char	*ft_strdupM(const char *s)
-{
-	char	*t;
-	int		i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	t = malloc(sizeof(char) * i + 2);
-	if (!t)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		t[i] = s[i];
-		i++;
-	}
-    t[i] = ' ';
-	t[i + 1] = 0;
-	return (t);
-}
 

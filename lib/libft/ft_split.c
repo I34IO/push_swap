@@ -6,12 +6,13 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:06:39 by razouani          #+#    #+#             */
-/*   Updated: 2023/12/04 13:57:01 by razouani         ###   ########.fr       */
+/*   Updated: 2024/03/08 16:36:35 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
 static int	count_char(const char *str, char c, int index)
 {
@@ -53,7 +54,7 @@ static char	*ft_strndup(const char *str, int index, int n)
 	char	*s;
 
 	i = 0;
-	s = malloc(sizeof(char) * n + 1);
+	s = ft_calloc(n + 1, sizeof(char));
 	if (!s)
 		return (NULL);
 	while (str[index] && i < n)
@@ -88,7 +89,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	tab = ft_calloc((count_words(s, c) + 1), sizeof(char *));
 	if (!tab)
 		return (NULL);
 	while (j < count_words(s, c) && s[i])

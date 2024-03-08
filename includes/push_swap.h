@@ -10,7 +10,8 @@
 # include <fcntl.h>
 # include <fcntl.h>
 
-
+#define INT_MAX 2147483647
+#define INT_MIN -2147483648
 
 typedef	struct s_argu {
 	char **split_argu;
@@ -26,7 +27,7 @@ typedef	struct s_argu {
 
 
 void split_av(char **av, t_argu *vars);
-int    check_arg(t_argu *vars);
+int    check_arg(t_argu *vars, char **av);
 int     check_sign(char *str);
 
 
