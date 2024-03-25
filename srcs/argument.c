@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   argument.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zizi <zizi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:45:40 by zizi              #+#    #+#             */
-/*   Updated: 2024/03/08 17:06:22 by razouani         ###   ########.fr       */
+/*   Updated: 2024/03/25 14:40:32 by zizi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,41 @@ int    check_arg(t_argu *vars, char **av)
 		i++;
 	}
 	i = 0;
+    if (check_double(vars) == 0)
+        return 0;
     while (vars->split_argu[i])
     {
         if (check_sign(vars->split_argu[i]) == 0)
 			return (0);//all_free(vars);
-		if (ft_atoi_l(vars->split_argu[i]) > INT_MAX || ft_atoi_l(vars->split_argu[i]) < INT_MIN)
-			return (0);
+		if ((ft_atoi_l(vars->split_argu[i]) > INT_MAX || ft_atoi_l(vars->split_argu[i]) < INT_MIN))
+            return (0);
+        if (check_long(vars->split_argu[i]) == 0)
+            return (0);
 		i++;
     }
+    return (1);
+}
+
+int     check_double(t_argu *vars)
+{
+    int i;
+    int j;
+
+    i = 0;
+    j = 0;
+    while (vars)//faire un atoi des argument et simplement comparer les nombre entre eux si 1 se resemble on kick 
+}
+
+int    check_long(char *str)
+{
+    while ((*str >= 9 && *str <= 13) || *str == 32)
+        str++;
+    if (*str == '-' || *str == '+')
+        str++;
+    while (*str == '0')
+        str++;
+    if (ft_strlen(str) > 11)
+        return (0);
     return (1);
 }
 

@@ -29,6 +29,8 @@ typedef	struct s_argu {
 void split_av(char **av, t_argu *vars);
 int    check_arg(t_argu *vars, char **av);
 int     check_sign(char *str);
+int    check_long(char *str);
+
 
 
 
