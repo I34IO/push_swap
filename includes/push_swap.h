@@ -16,20 +16,25 @@
 typedef	struct s_argu {
 	char **split_argu;
 	char *join_argu;
-	// t_list list;
+	// struct s_argu *next;
+	// struct s_argu *prev;
+	
 }				t_argu;
 
-// typedef struct s_list
-// {
-// 	void			*data;
-// 	struct s_list	*next;
-// }					t_list;
+typedef struct s_op
+{
+	struct s_op	*next;
+	struct s_op	*prev;
+	t_argu argu;
+	
+}					t_op;
 
 
 void split_av(char **av, t_argu *vars);
 int    check_arg(t_argu *vars, char **av);
 int     check_sign(char *str);
 int    check_long(char *str);
+int     check_double(t_argu *vars);
 
 
 

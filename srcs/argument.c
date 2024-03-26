@@ -6,7 +6,7 @@
 /*   By: zizi <zizi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:45:40 by zizi              #+#    #+#             */
-/*   Updated: 2024/03/25 14:40:32 by zizi             ###   ########.fr       */
+/*   Updated: 2024/03/26 13:50:50 by zizi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,26 @@ int     check_double(t_argu *vars)
 {
     int i;
     int j;
-
+    int nbr1;
+    int nbr2;
+    
+    nbr1 = 0;
+    nbr2 = 0;
     i = 0;
-    j = 0;
-    while (vars)//faire un atoi des argument et simplement comparer les nombre entre eux si 1 se resemble on kick 
+    while (vars->split_argu[i])
+    {
+        nbr1 = ft_atoi(vars->split_argu[i]);
+        j = i + 1;
+        while (vars->split_argu[j])
+        {
+            nbr2 = ft_atoi(vars->split_argu[j]);
+            if (nbr2 == nbr1)
+                return (0);
+            j++;
+        }
+        i++;
+    } 
+    return (1);
 }
 
 int    check_long(char *str)
