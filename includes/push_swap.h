@@ -23,6 +23,7 @@ typedef	struct s_argu {
 
 typedef struct s_op
 {
+	int		data;
 	struct s_op	*next;
 	struct s_op	*prev;
 	t_argu argu;
@@ -35,6 +36,7 @@ int    check_arg(t_argu *vars, char **av);
 int     check_sign(char *str);
 int    check_long(char *str);
 int     check_double(t_argu *vars);
+void	popo(t_argu *vars, t_op *list);
 
 
 
