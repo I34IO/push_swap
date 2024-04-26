@@ -36,7 +36,7 @@ int    check_arg(t_argu *vars, char **av);
 int     check_sign(char *str);
 int    check_long(char *str);
 int     check_double(t_argu *vars);
-void	popo(t_argu *vars, t_op *list);
+t_op	*popo(t_argu *vars, t_op *list);
 
 
 

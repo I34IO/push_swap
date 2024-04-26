@@ -6,24 +6,33 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:00:43 by zizi              #+#    #+#             */
-/*   Updated: 2024/04/11 18:52:10 by razouani         ###   ########.fr       */
+/*   Updated: 2024/04/26 18:27:53 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	popo(t_argu *vars, t_op *list)
+t_op	*popo(t_argu *vars, t_op *list)
 {
 	int i;
+	t_op *tmp;
+	t_op *tempo;
 	i = 0;
 	
+	list = ft_calloc(sizeof(t_op), 1);
+	list->data = ft_atoi(vars->split_argu[i]);
+	tmp = list;
 	while(vars->split_argu[i])
 	{
-		list = ft_calloc(sizeof(1), 1);
-		list->data = ft_atoi(vars->split_argu[i]);
-		ft_printf("%d\n", list->data);
+		list->next = ft_calloc(sizeof(t_op), 1);
+		list->next->prev = list;
+		list->next->data = ft_atoi(vars->split_argu[i]);
+		tempo = list;
 		list = list->next;
+		list->prev = tempo;
 		i++;
 	}
-	// list->next = NULL;
+	ft_printf("%d\n", list->prev->data);
+	list->next = tmp;
+	return (tmp);
 }
