@@ -37,8 +37,9 @@ int     check_sign(char *str);
 int    check_long(char *str);
 int     check_double(t_argu *vars);
 t_op	*popo(t_argu *vars, t_op *list);
-
-
+void	ft_sa(t_op *a);
+void	ft_sb(t_op *b);
+void	ft_ss(t_op *a, t_op *b);
 
 
 

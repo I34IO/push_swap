@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:00:43 by zizi              #+#    #+#             */
-/*   Updated: 2024/04/26 18:27:53 by razouani         ###   ########.fr       */
+/*   Updated: 2024/05/02 19:04:03 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ t_op	*popo(t_argu *vars, t_op *list)
 	int i;
 	t_op *tmp;
 	t_op *tempo;
-	i = 0;
 	
+	i = 1;
 	list = ft_calloc(sizeof(t_op), 1);
-	list->data = ft_atoi(vars->split_argu[i]);
 	tmp = list;
+	list->prev = list;
+	list->data = ft_atoi(vars->split_argu[0]);
 	while(vars->split_argu[i])
 	{
 		list->next = ft_calloc(sizeof(t_op), 1);
@@ -32,7 +33,6 @@ t_op	*popo(t_argu *vars, t_op *list)
 		list->prev = tempo;
 		i++;
 	}
-	ft_printf("%d\n", list->prev->data);
 	list->next = tmp;
 	return (tmp);
 }

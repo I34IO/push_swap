@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   comand.c                                           :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zizi <zizi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 17:43:59 by razouani          #+#    #+#             */
-/*   Updated: 2024/04/30 17:05:28 by zizi             ###   ########.fr       */
+/*   Updated: 2024/05/02 18:53:25 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int     swap_list(t_op **swap)
+int     swap_list(t_op *swap)
 {
     int tmp;
 
-    if (!*swap || !(*swap)->next)
+    if (!swap || !swap->next)
         return (0);
-    tmp = (*swap)->data;
-    (*swap)->data = (*swap)->next->data;
-    (*swap)->next->data = tmp;
+    tmp = swap->data;
+    swap->data = swap->next->data;
+    swap->next->data = tmp;
+	// for (t_op *curr = swap->next; curr != swap; curr = curr->next)
+	// 	printf("%d\n", curr->data);
     return (1);
 }
-
-void	ft_sa(t_op **a)
+void	ft_sa(t_op *a)
 {
 	if (swap_list(a) == 1)
 		ft_printf("sa\n");
 }
 
-void	ft_sb(t_op **b)
+void	ft_sb(t_op *b)
 {
 	if (swap_list(b) == 1)
 		ft_printf("sb\n");
 }
 
-void	ft_ss(t_op **a, t_op **b)
+void	ft_ss(t_op *a, t_op *b)
 {
 	if (swap_list(a) == 1 && swap_list(b) == 1)
 		ft_printf("ss\n");
