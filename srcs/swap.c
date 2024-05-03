@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 17:43:59 by razouani          #+#    #+#             */
-/*   Updated: 2024/05/02 18:53:25 by razouani         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:45:36 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,17 @@ int     swap_list(t_op *swap)
 void	ft_sa(t_op *a)
 {
 	if (swap_list(a) == 1)
-		ft_printf("sa\n");
+		ft_printf("\nsa\n");
 }
 
 void	ft_sb(t_op *b)
 {
 	if (swap_list(b) == 1)
-		ft_printf("sb\n");
+		ft_printf("\nsb\n");
 }
 
 void	ft_ss(t_op *a, t_op *b)
 {
 	if (swap_list(a) == 1 && swap_list(b) == 1)
-		ft_printf("ss\n");
+		ft_printf("\nss\n");
 }

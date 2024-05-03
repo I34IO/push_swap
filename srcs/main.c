@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:40:47 by zizi              #+#    #+#             */
-/*   Updated: 2024/05/02 19:04:09 by razouani         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:36:27 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int main(int ac, char ** av)
 {
     (void)ac;
     t_argu	*vars;
-	t_op	*list;
-	//t_op	*a;
+	// t_op	*list;
+	t_op	*a;
 	// t_op	*b;
 	
 	if (ac == 1)
@@ -31,14 +31,16 @@ int main(int ac, char ** av)
 	{
 		return (0);
 	}
-	list = NULL;
-	list = popo(vars, list);
-	printf("%d\n", list->data);
-	for (t_op *curr = list->next; curr != list; curr = curr->next)
+	a = NULL;
+	a = popo(vars, a);
+	printf("avant le swap:\n");
+	ft_printf("%d\n", a->data);
+	for (t_op *curr = a->next; curr != a; curr = curr->next)
 		printf("%d\n", curr->data);
-	ft_sa(list);
-	printf("%d\n", list->data);
-	for (t_op *curr = list->next; curr != list; curr = curr->next)
+	ft_sa(a);
+	ft_printf("\napres le swap:\n");
+	ft_printf("%d\n", a->data);
+	for (t_op *curr = a->next; curr != a; curr = curr->next)
 		printf("%d\n", curr->data);
     return (0);
 }

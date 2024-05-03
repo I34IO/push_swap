@@ -16,9 +16,6 @@
 typedef	struct s_argu {
 	char **split_argu;
 	char *join_argu;
-	// struct s_argu *next;
-	// struct s_argu *prev;
-	
 }				t_argu;
 
 typedef struct s_op
