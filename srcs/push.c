@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:12:11 by zizi              #+#    #+#             */
-/*   Updated: 2024/05/15 18:08:34 by razouani         ###   ########.fr       */
+/*   Updated: 2024/05/20 19:41:52 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,44 @@ t_op*		push(t_op *push, t_op **recept)
 		push = delete_node(push);
 		return (push);
 	}
-	(*recept)->data = push->data;
-	(*recept) = add_node(&recept, push);
+	(*recept) = add_node(recept, push);
 	push = delete_node(push);
-	return (push);
-}
-t_op*	delete_node(t_op *push)
-{
-	t_op *tmp;
-	
-	push = push->next;
-	free(push->prev);
-	tmp = push->next;
-	while (tmp != push->prev->prev)
-		tmp = tmp->next;
-	push->prev = tmp;
 	return (push);
 }
 
 t_op*	add_node(t_op **recept, t_op *push)
 {
 	t_op *tmp;
-	tmp = &recept;
-	(*recept)->data = push->data;
-	(*recept)->next
-	//faire les prev et next de la pile b 
+	tmp = *recept;
+	ft_printf("%d\n", tmp->data);
+	(*recept) = ft_calloc(sizeof(t_op), 1);
+	(*recept)->data  = push->data;
+	
+	ft_printf("%d\n", (*recept)->data);
+	// ft_printf("%d\n", (*recept)->next->next->data);
+	//  for (t_op *curr = (*recept)->next; curr != (*recept); curr = curr->next)
+	//  	printf("%d\n", curr->data);
+	// (*recept) = (*recept)->next;
+	// (*recept)->data = push->data;
+	 
+	 return(*recept);
+}
+
+t_op*	delete_node(t_op *push)
+{
+	t_op *tmp;
+	t_op *tmp_2;
+	
+	push = push->next;
+	free(push->prev);
+	tmp_2 = push;
+	tmp = push->next;
+	while (tmp != push->prev->prev)
+		tmp = tmp->next;
+	push->prev = tmp;
+	while(push != tmp)
+		push = push->next;
+	push->next = tmp_2;
+	push = push->next;
+	return (push);
 }

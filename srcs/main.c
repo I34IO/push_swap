@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:40:47 by zizi              #+#    #+#             */
-/*   Updated: 2024/05/15 17:42:15 by razouani         ###   ########.fr       */
+/*   Updated: 2024/05/20 19:16:06 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,29 @@ int main(int ac, char ** av)
 	b = NULL;
 	a = popo(vars, a);
 	a = push(a, &b);
-	ft_printf("%d\n", b->next->data);
-	ft_printf("%d\n", a->data);
+	// ft_printf("tableau b:\n%d\n", b->data);	
+	// for (t_op *curr = b->next; curr != b; curr = curr->next)
+	// 	printf("%d\n", curr->data);
+		
+	// ft_printf("tableau a:\n%d\n", a->data);
+	// for (t_op *curr = a->next; curr != a; curr = curr->next)
+	// 	printf("%d\n", curr->data);
+
+	// ft_printf("\n2eme ROUND\n\n");
+		
+	 a = push(a, &b);
+	// ft_printf("tableau b:\n%d\n", b->data);	
+	// for (t_op *curr = b->next; curr != b; curr = curr->next)
+	// 	printf("%d\n", curr->data);
+		
+	// ft_printf("tableau a:\n%d\n", a->data);
+	// for (t_op *curr = a->next; curr != a; curr = curr->next)
+	// 	printf("%d\n", curr->data);
+	
+
+
+
+	
 	// ft_printf("%d\n", b->data);
 	// printf("avant le swap:\n");
 	// ft_printf("%d\n", a->data);
@@ -43,9 +64,5 @@ int main(int ac, char ** av)
 	// 	printf("%d\n", curr->data);
 	// ft_sa(a);
 	// ft_printf("\napres le swap:\n");
-	//ft_printf("%d\n", a->data);
-	
-	// for (t_op *curr = a->next; curr != a; curr = curr->next)
-	// 	printf("%d\n", curr->data);
     return (0);
 }
