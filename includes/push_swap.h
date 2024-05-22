@@ -37,9 +37,10 @@ t_op	*popo(t_argu *vars, t_op *list);
 void	ft_sa(t_op *a);
 void	ft_sb(t_op *b);
 void	ft_ss(t_op *a, t_op *b);
-t_op*		push(t_op *push, t_op **recept);
-t_op*	delete_node(t_op *push);
-t_op*	add_node(t_op **recept, t_op *push);
+int		ft_push(t_op **push, t_op **recept);
+void	ft_pa(t_op **recept, t_op **push);
+void	ft_pb(t_op **push, t_op **recept);
+
 
 
 
