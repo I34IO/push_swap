@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:40:47 by zizi              #+#    #+#             */
-/*   Updated: 2024/05/22 18:23:49 by razouani         ###   ########.fr       */
+/*   Updated: 2024/05/23 18:06:48 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,9 @@ int main(int ac, char ** av)
 	a = NULL;
 	b = NULL;
 	a = popo(vars, a);
-	ft_push(&a, &b);
-	//visual_stack(a, b);
-	ft_push(&a, &b);
-	//visual_stack(a, b);
-	ft_printf("%d\n", b->next->next->data);
+	sort(&a, &b);
+	visual_stack(a, b);
+	
 	
 
 

@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:00:43 by zizi              #+#    #+#             */
-/*   Updated: 2024/05/15 15:20:43 by razouani         ###   ########.fr       */
+/*   Updated: 2024/05/23 16:37:38 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ t_op	*popo(t_argu *vars, t_op *list)
 		list->prev = tempo;
 		i++;
 	}
-	tempo = list->prev->next;
-	list->next = tmp;
-	list->next->prev = tempo;
+	// tempo = list->prev->next;
+	// list->next = tmp;
+	// list->next->prev = tempo;
 	return (tmp);
 }

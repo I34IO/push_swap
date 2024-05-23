@@ -6,50 +6,84 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:12:11 by zizi              #+#    #+#             */
-/*   Updated: 2024/05/22 18:20:22 by razouani         ###   ########.fr       */
+/*   Updated: 2024/05/23 18:30:11 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
 
-int		ft_push(t_op **push, t_op **recept)
-{
-	t_op	*push_node;
+// int		ft_push(t_op **push, t_op **recept)
+// {
+// 	t_op	*push_node;
 
-	if (!*push)
+// 	if (!*push)
+// 		return (0);
+// 	push_node = (*push);
+// 	(*push) = (*push)->next;
+// 	if (*push)
+// 		(*push)->prev = NULL;
+// 	if (!*recept)
+// 	{
+// 		*recept = push_node;
+// 		push_node->next = NULL;
+// 	}
+// 	else
+// 	{
+// 		push_node->next = *recept;
+// 		push_node->next->prev = push_node;
+// 		*recept = push_node;
+// 	}
+// 	return (1);
+// }
+
+// void	ft_pa(t_op **recept, t_op **push)
+// {
+// 	if (ft_push(recept, push) == 1)
+// 		ft_printf("pa\n");
+// }
+
+// void	ft_pb(t_op **push, t_op **recept)
+// {
+// 	if (ft_push(push, recept) == 1)
+// 		ft_printf("pb\n");
+// }
+
+static int ft_push(t_op **a, t_op **b)
+{
+	t_op *push_node;
+
+	if (!*a)
 		return (0);
-	push_node = (*push);
-	(*push) = (*push)->next;
-	if (*push)
-		(*push)->prev = NULL;
-	if (!*recept)
+	push_node = (*a);
+	(*a) = (*a)->next;
+	if (*a)
+		(*a)->prev = NULL;
+	if (!*b)
 	{
-		*recept = push_node;
+		*b = push_node;
 		push_node->next = NULL;
 	}
 	else
 	{
-		push_node->next = *recept;
+		push_node->next = *b;
 		push_node->next->prev = push_node;
-		*recept = push_node;
+		*b = push_node;
 	}
 	return (1);
 }
 
-void	ft_pa(t_op **recept, t_op **push)
+void ft_pa(t_op **b, t_op **a)
 {
-	if (ft_push(recept, push) == 1)
-		ft_printf("pa\n");
+if (ft_push(b, a) == 1)
+ft_printf("pa\n");
 }
 
-void	ft_pb(t_op **push, t_op **recept)
+void ft_pb(t_op **a, t_op **b)
 {
-	if (ft_push(push, recept) == 1)
-		ft_printf("pb\n");
+if (ft_push(a, b) == 1)
+ft_printf("pb\n");
 }
-
-
 
 
 
