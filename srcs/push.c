@@ -6,10 +6,9 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:12:11 by zizi              #+#    #+#             */
-/*   Updated: 2024/05/23 18:30:11 by razouani         ###   ########.fr       */
+/*   Updated: 2024/05/24 18:28:58 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -49,9 +48,9 @@
 // 		ft_printf("pb\n");
 // }
 
-static int ft_push(t_op **a, t_op **b)
+static int	ft_push(t_op **a, t_op **b)
 {
-	t_op *push_node;
+	t_op	*push_node;
 
 	if (!*a)
 		return (0);
@@ -73,43 +72,22 @@ static int ft_push(t_op **a, t_op **b)
 	return (1);
 }
 
-void ft_pa(t_op **b, t_op **a)
+void	ft_pa(t_op **b, t_op **a)
 {
-if (ft_push(b, a) == 1)
-ft_printf("pa\n");
+	if (ft_push(b, a) == 1)
+		ft_printf("pa\n");
 }
 
-void ft_pb(t_op **a, t_op **b)
+void	ft_pb(t_op **a, t_op **b)
 {
-if (ft_push(a, b) == 1)
-ft_printf("pb\n");
+	if (ft_push(a, b) == 1)
+		ft_printf("pb\n");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // t_op*		push(t_op **push, t_op **recept)
 // {
 // 	//t_op *tmp;
-	
+
 // 	if (!push)
 // 		return (push);
 // 	if (!(*recept))
@@ -155,15 +133,14 @@ ft_printf("pb\n");
 // 		tmp = tmp->next;
 // 	}
 
-	 
-// 	 return(push);
+// 		return(push);
 // }
 
 // t_op*	delete_node(t_op *push)
 // {
 // 	t_op *tmp;
 // 	t_op *tmp_2;
-	
+
 // 	push = push->next;
 // 	free(push->prev);
 // 	tmp_2 = push;

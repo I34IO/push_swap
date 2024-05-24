@@ -6,23 +6,24 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 17:43:59 by razouani          #+#    #+#             */
-/*   Updated: 2024/05/23 15:17:05 by razouani         ###   ########.fr       */
+/*   Updated: 2024/05/24 18:30:49 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int     swap_list(t_op **swap)
+int	swap_list(t_op **swap)
 {
-    int tmp;
+	int	tmp;
 
-    if (!swap || !(*swap)->next)
-        return (0);
-    tmp = (*swap)->data;
-    (*swap)->data = (*swap)->next->data;
-    (*swap)->next->data = tmp;
-    return (1);
+	if (!swap || !(*swap)->next)
+		return (0);
+	tmp = (*swap)->data;
+	(*swap)->data = (*swap)->next->data;
+	(*swap)->next->data = tmp;
+	return (1);
 }
+
 void	ft_sa(t_op **a)
 {
 	if (swap_list(a) == 1)

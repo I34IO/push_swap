@@ -6,13 +6,13 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:48:33 by razouani          #+#    #+#             */
-/*   Updated: 2024/05/23 18:39:09 by razouani         ###   ########.fr       */
+/*   Updated: 2024/05/24 18:29:42 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		reverse_list(t_op **swap)
+int	reverse_list(t_op **swap)
 {
 	t_op	*last;
 
