@@ -6,13 +6,13 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:00:43 by zizi              #+#    #+#             */
-/*   Updated: 2024/05/24 18:24:21 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:51:04 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_op	*popo(t_argu *vars, t_op *list)
+t_op	*init_list(t_argu *vars, t_op *list)
 {
 	int		i;
 	t_op	*tmp;

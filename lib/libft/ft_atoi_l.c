@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_l.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/05 17:03:48 by razouani          #+#    #+#             */
+/*   Updated: 2024/06/05 17:04:07 by razouani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-long long int		ft_atoi_l(char *str)
+long long int	ft_atoi_l(char *str)
 {
-	int	i;
+	int				i;
 	long long int	res;
-	int	po;
+	int				po;
 
 	i = 0;
 	res = 0;
@@ -16,7 +28,7 @@ long long int		ft_atoi_l(char *str)
 		if (str[i] == 45)
 		{
 			po *= -1;
-		}	
+		}
 		i++;
 	}
 	while (str[i] >= 48 && str[i] <= 57)

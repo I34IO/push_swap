@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:40:47 by zizi              #+#    #+#             */
-/*   Updated: 2024/05/24 18:26:11 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:51:14 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ int	main(int ac, char **av)
 	}
 	a = NULL;
 	b = NULL;
-	a = popo(vars, a);
+	a = init_list(vars, a);
 	sort(&a, &b);
-	visual_stack(a, b);
 	return (0);
 }

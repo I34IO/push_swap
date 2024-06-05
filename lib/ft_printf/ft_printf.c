@@ -6,13 +6,11 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 20:55:07 by zozo              #+#    #+#             */
-/*   Updated: 2023/12/21 15:55:06 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/05 18:49:32 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
-
 
 int	check_format(char c, va_list args)
 {
@@ -20,31 +18,31 @@ int	check_format(char c, va_list args)
 
 	len = 0;
 	if (c == 'c')
-		return (ft_putchar(va_arg(args, int)));//ok
+		return (ft_putchar(va_arg(args, int)));
 	else if (c == 's')
-		return (ft_putstr(va_arg(args, char *)));//ok
+		return (ft_putstr(va_arg(args, char *)));
 	else if (c == 'i' || c == 'd')
-		return (ft_putnbr(va_arg(args, int), &len));//ok
+		return (ft_putnbr(va_arg(args, int), &len));
 	else if (c == 'u')
-		return (ft_putuint(va_arg(args, unsigned int)));//ok
+		return (ft_putuint(va_arg(args, unsigned int)));
 	else if (c == 'x' || c == 'X')
-		return (ft_puthex(va_arg(args, unsigned int), c));//ok
+		return (ft_puthex(va_arg(args, unsigned int), c));
 	else if (c == 'p')
-		return (ft_putptr(va_arg(args, void *)));//ok
+		return (ft_putptr(va_arg(args, void *)));
 	else if (c == '%')
-		return (ft_putchar('%'));//ok
+		return (ft_putchar('%'));
 	return (1);
 }
 
 int	ft_printf(const char *str, ...)
 {
-	va_list	args;
-	int		i;
-	int		len;
+	int			i;
+	int			len;
+	va_list		args;
 
-	va_start(args, str);
 	i = 0;
 	len = 0;
+	va_start(args, str);
 	if (!str)
 		return (-1);
 	while (str[i])

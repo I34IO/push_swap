@@ -6,16 +6,18 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:28:50 by razouani          #+#    #+#             */
-/*   Updated: 2024/02/02 14:29:05 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:45:16 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_lenPP(char	**map)
+#include "libft.h"
+
+int	ft_lenpp(char **map)
 {
 	int	y;
 
 	y = 0;
-	while(map[y])
+	while (map[y])
 		y++;
 	return (y);
 }
