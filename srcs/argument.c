@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:45:40 by zizi              #+#    #+#             */
-/*   Updated: 2024/05/24 18:34:28 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/07 16:37:17 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,21 @@
 void	split_av(char **av, t_argu *vars)
 {
 	int	i;
+	char *tmp;
 
 	i = 2;
 	vars->join_argu = av[1];
 	while (av[i])
 	{
-		vars->join_argu = ft_strdupl(vars->join_argu);
-		vars->join_argu = ft_strjoin(vars->join_argu, av[i]);
+		tmp = ft_strdupl(vars->join_argu);
+		if (i == 3)
+			free(vars->join_argu);
+		vars->join_argu = ft_strjoin(tmp, av[i]);
+		free(tmp);
 		i++;
 	}
 	vars->split_argu = ft_split(vars->join_argu, ' ');
+	free(vars->join_argu);
 	return ;
 }
 
@@ -111,7 +116,8 @@ int	check_sign(char *str)
 			i++;
 		else if ((str[i] < '0' || str[i] > '9'))
 			return (0);
-		i++;
+		if (str[i])
+			i++;
 	}
 	return (1);
 }

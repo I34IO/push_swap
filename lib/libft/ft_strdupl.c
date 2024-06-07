@@ -6,14 +6,14 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:54:47 by razouani          #+#    #+#             */
-/*   Updated: 2024/06/05 17:42:45 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/07 16:07:07 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include<stdlib.h>
 
-char	*ft_strdupl(const char *s)
+char	*ft_strdupl(char *s)
 {
 	char	*t;
 	int		i;

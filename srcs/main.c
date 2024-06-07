@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:40:47 by zizi              #+#    #+#             */
-/*   Updated: 2024/06/05 17:51:14 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/07 16:54:49 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,20 @@ void	visual_stack(t_op *a, t_op *b)
 	printf("\n");
 }
 
+static void	*ft_free(char **strs, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+	return (NULL);
+}
+
 int	main(int ac, char **av)
 {
 	t_argu	*vars;
@@ -55,5 +69,9 @@ int	main(int ac, char **av)
 	b = NULL;
 	a = init_list(vars, a);
 	sort(&a, &b);
+	ft_free(vars->split_argu, ft_lenpp(vars->split_argu));
+	free(vars);
+	ft_free_list(a);
 	return (0);
 }
+

@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:33:05 by razouani          #+#    #+#             */
-/*   Updated: 2024/06/05 18:48:12 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/07 14:57:17 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,6 @@ int					ft_lenpp(char	**map);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 long long int		ft_atoi_l(char *str);
-char				*ft_strdupl(const char *s);
+char				*ft_strdupl(char *s);
 
 #endif

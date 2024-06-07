@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:06:39 by razouani          #+#    #+#             */
-/*   Updated: 2024/03/08 16:36:35 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/07 16:54:12 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	*ft_free(char **strs, int count)
 	int	i;
 
 	i = 0;
-	while (i < count)
+	while (strs[i])
 	{
 		free(strs[i]);
 		i++;
