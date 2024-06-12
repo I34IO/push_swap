@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:06:32 by razouani          #+#    #+#             */
-/*   Updated: 2024/06/07 16:44:05 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:02:28 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,5 @@ int				list_size(t_op *list);
 int				get_iterations(t_op *stack);
 void			sort(t_op **stack_a, t_op **stack_b);
 void			ft_free_list(t_op *list);
-
 
 #endif

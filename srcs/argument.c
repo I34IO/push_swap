@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:45:40 by zizi              #+#    #+#             */
-/*   Updated: 2024/06/07 16:37:17 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:00:57 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	split_av(char **av, t_argu *vars)
 {
-	int	i;
-	char *tmp;
+	int		i;
+	char	*tmp;
 
 	i = 2;
 	vars->join_argu = av[1];

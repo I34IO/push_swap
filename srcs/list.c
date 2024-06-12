@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:00:43 by zizi              #+#    #+#             */
-/*   Updated: 2024/06/07 16:43:45 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:01:58 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,16 @@ t_op	*init_list(t_argu *vars, t_op *list)
 		list->prev = tempo;
 		i++;
 	}
-	//free(list);
 	return (tmp);
 }
 
 void	ft_free_list(t_op *list)
 {
-	while(list->next != NULL)
+	while (list->next != NULL)
 	{
 		list = list->next;
 		free(list->prev);
 	}
-	free(list);
-	return;
+	free (list);
+	return ;
 }
