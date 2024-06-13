@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:40:47 by zizi              #+#    #+#             */
-/*   Updated: 2024/06/12 19:27:56 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/13 15:25:35 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,15 @@ static int	ft_order(int ac, char **av)
 			return (1);
 		i++;
 	}
-	return (0);
+	exit (0);
 }
+
+static void error_msg()
+{
+	ft_printf("error\n");
+	exit(0);
+}
+
 
 int	main(int ac, char **av)
 {
@@ -67,19 +74,22 @@ int	main(int ac, char **av)
 	t_op	*a;
 	t_op	*b;
 
-	(void)ac;
-	if (ac == 1)
+	if (ac <= 2)
 		return (0);
 	vars = ft_calloc(sizeof(t_argu), 1);
 	split_av(av, vars);
-	if (check_arg(vars, av) == 0 || ft_order(ac, av) == 0)
-	{
-		return (0);
-	}
+	ft_order(ac, av);
+	if (check_arg(vars, av) == 0)
+		error_msg();
 	a = NULL;
 	b = NULL;
 	a = init_list(vars, a);
-	sort(&a, &b);
+	if (ac == 4)
+		sort_three(&a);
+	else if (ac == 3)
+		sort_two(&a);
+	else
+		sort(&a, &b);
 	ft_free(vars->split_argu, ft_lenpp(vars->split_argu));
 	free(vars);
 	ft_free_list(a);

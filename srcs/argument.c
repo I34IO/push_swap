@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:45:40 by zizi              #+#    #+#             */
-/*   Updated: 2024/06/12 19:00:57 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/13 15:41:38 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	split_av(char **av, t_argu *vars)
 	while (av[i])
 	{
 		tmp = ft_strdupl(vars->join_argu);
-		if (i == 3)
+		if (i > 2)
 			free(vars->join_argu);
 		vars->join_argu = ft_strjoin(tmp, av[i]);
 		free(tmp);
