@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:45:40 by zizi              #+#    #+#             */
-/*   Updated: 2024/06/13 15:41:38 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/17 19:18:17 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	split_av(char **av, t_argu *vars)
 		i++;
 	}
 	vars->split_argu = ft_split(vars->join_argu, ' ');
-	free(vars->join_argu);
+	if (i > 2)
+		free(vars->join_argu);
 	return ;
 }
 
@@ -47,7 +48,7 @@ int	check_arg(t_argu *vars, char **av)
 		i++;
 	}
 	i = 0;
-	if (check_double(vars) == 0)
+	if (check_double(vars->split_argu) == 0)
 		return (0);
 	while (vars->split_argu[i])
 	{
@@ -62,28 +63,26 @@ int	check_arg(t_argu *vars, char **av)
 	return (1);
 }
 
-int	check_double(t_argu *vars)
+int	check_double(char **split)
 {
-	int	i;
+int	i;
 	int	j;
-	int	nbr1;
-	int	nbr2;
+	int	nb1;
+	int	nb2;
 
-	nbr1 = 0;
-	nbr2 = 0;
-	i = 0;
-	while (vars->split_argu[i])
+	j = 0;
+	while (split[j])
 	{
-		nbr1 = ft_atoi(vars->split_argu[i]);
-		j = i + 1;
-		while (vars->split_argu[j])
+		nb1 = ft_atoi(split[j]);
+		i = j + 1;
+		while (split[i])
 		{
-			nbr2 = ft_atoi(vars->split_argu[j]);
-			if (nbr2 == nbr1)
+			nb2 = ft_atoi(split[i]);
+			if (nb1 == nb2)
 				return (0);
-			j++;
+			i++;
 		}
-		i++;
+		j++;
 	}
 	return (1);
 }

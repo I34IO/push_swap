@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:06:32 by razouani          #+#    #+#             */
-/*   Updated: 2024/06/13 15:01:52 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/17 19:12:08 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void			split_av(char **av, t_argu *vars);
 int				check_arg(t_argu *vars, char **av);
 int				check_sign(char *str);
 int				check_long(char *str);
-int				check_double(t_argu *vars);
+int				check_double(char **split);
 t_op			*init_list(t_argu *vars, t_op *list);
 void			ft_sa(t_op **a);
 void			ft_sb(t_op **b);

@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:40:47 by zizi              #+#    #+#             */
-/*   Updated: 2024/06/13 15:25:35 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/24 16:44:30 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,28 @@ static void	*ft_free(char **strs, int count)
 	return (NULL);
 }
 
-static int	ft_order(int ac, char **av)
+static int	ft_order(char **list)
 {
 	int	i;
+	int y;
 
-	i = 1;
-	while (i < (ac - 1))
+	i = 0;
+	y = 0;
+	while (list[y])
 	{
-		if (ft_atoi(av[i]) > ft_atoi(av[i + 1]))
+		if (ft_atoi(list[y]) > ft_atoi(list[y + 1]))
 			return (1);
-		i++;
+		y++;
 	}
+	ft_free(list, ft_lenpp(list));
 	exit (0);
 }
 
-static void error_msg()
+static void error_msg(t_argu *vars)
 {
 	ft_printf("error\n");
+	ft_free(vars->split_argu, ft_lenpp(vars->split_argu));
+	free(vars);
 	exit(0);
 }
 
@@ -74,13 +79,15 @@ int	main(int ac, char **av)
 	t_op	*a;
 	t_op	*b;
 
-	if (ac <= 2)
+	if (ac <= 1)
 		return (0);
 	vars = ft_calloc(sizeof(t_argu), 1);
 	split_av(av, vars);
-	ft_order(ac, av);
 	if (check_arg(vars, av) == 0)
-		error_msg();
+		error_msg(vars);
+	ft_printf("caca");
+	ft_order(vars->split_argu);
+	ft_printf("caca");
 	a = NULL;
 	b = NULL;
 	a = init_list(vars, a);
@@ -90,6 +97,7 @@ int	main(int ac, char **av)
 		sort_two(&a);
 	else
 		sort(&a, &b);
+	ft_printf("%d\n", a->data);
 	ft_free(vars->split_argu, ft_lenpp(vars->split_argu));
 	free(vars);
 	ft_free_list(a);
