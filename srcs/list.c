@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:00:43 by zizi              #+#    #+#             */
-/*   Updated: 2024/06/12 19:01:58 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:57:46 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,16 @@ void	ft_free_list(t_op *list)
 		list = list->next;
 		free(list->prev);
 	}
-	free (list);
+	free(list);
 	return ;
+}
+
+int	count_arg_list(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+		i++;
+	return (i);
 }

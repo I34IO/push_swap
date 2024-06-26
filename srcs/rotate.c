@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:11:26 by razouani          #+#    #+#             */
-/*   Updated: 2024/05/24 18:30:26 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:56:24 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,22 @@ int	rotate_list(t_op **swap)
 
 	if (!*swap)
 		return (0);
-	last = (*swap);
-	while (last->next)
-		last = last->next;
+	last = found_last_list(*swap);
 	last->next = *swap;
 	*swap = (*swap)->next;
 	(*swap)->prev = NULL;
 	last->next->prev = last;
 	last->next->next = NULL;
 	return (1);
+}
+
+t_op	*found_last_list(t_op *swap)
+{
+	if (!swap)
+		return (NULL);
+	while (swap->next)
+		swap = swap->next;
+	return (swap);
 }
 
 void	ft_ra(t_op **a)

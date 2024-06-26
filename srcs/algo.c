@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 17:22:02 by razouani          #+#    #+#             */
-/*   Updated: 2024/06/13 15:00:53 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:59:42 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	sort(t_op **stack_a, t_op **stack_b)
 
 	i = 0;
 	curr_a = *stack_a;
-	size = list_size(curr_a);
+	size = list_size(*stack_a);
 	iterations = get_iterations(*stack_a);
 	while (i < iterations)
 	{
@@ -76,13 +76,15 @@ int	list_size(t_op *list)
 	}
 	return (len);
 }
+
 void	sort_three(t_op **a)
 {
 	if ((*a)->data > (*a)->next->data && (*a)->data > (*a)->next->next->data)
 		ft_ra(a);
 	if ((*a)->next->data > (*a)->next->next->data)
 		ft_rra(a);
-	if ((*a)->data < (*a)->next->data && (*a)->next->data > (*a)->next->next->data)
+	if ((*a)->data < (*a)->next->data
+		&& (*a)->next->data > (*a)->next->next->data)
 	{
 		ft_rra(a);
 		ft_sa(a);
@@ -90,6 +92,7 @@ void	sort_three(t_op **a)
 	if ((*a)->data > (*a)->next->data)
 		ft_sa(a);
 }
+
 void	sort_two(t_op **a)
 {
 	if ((*a)->data > (*a)->next->data)

@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:45:40 by zizi              #+#    #+#             */
-/*   Updated: 2024/06/17 19:18:17 by razouani         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:58:09 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	check_arg(t_argu *vars, char **av)
 
 int	check_double(char **split)
 {
-int	i;
+	int	i;
 	int	j;
 	int	nb1;
 	int	nb2;
