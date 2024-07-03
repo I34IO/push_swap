@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 17:22:02 by razouani          #+#    #+#             */
-/*   Updated: 2024/06/26 20:59:42 by razouani         ###   ########.fr       */
+/*   Updated: 2024/07/03 08:12:41 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	get_iterations(t_op *stack)
 	biggest_index = stack->data;
 	iterations = 0;
 	i = 0;
-	while (i < list_size(stack))
+	while (stack)
 	{
 		if (stack->data > biggest_index)
 			biggest_index = stack->data;
@@ -43,7 +43,7 @@ void	sort(t_op **stack_a, t_op **stack_b)
 
 	i = 0;
 	curr_a = *stack_a;
-	size = list_size(*stack_a);
+	size = list_size(curr_a);
 	iterations = get_iterations(*stack_a);
 	while (i < iterations)
 	{
@@ -60,41 +60,4 @@ void	sort(t_op **stack_a, t_op **stack_b)
 			ft_pa(stack_b, stack_a);
 		i++;
 	}
-}
-
-int	list_size(t_op *list)
-{
-	int	len;
-
-	if (!list)
-		return (0);
-	len = 0;
-	while (list)
-	{
-		list = list->next;
-		len++;
-	}
-	return (len);
-}
-
-void	sort_three(t_op **a)
-{
-	if ((*a)->data > (*a)->next->data && (*a)->data > (*a)->next->next->data)
-		ft_ra(a);
-	if ((*a)->next->data > (*a)->next->next->data)
-		ft_rra(a);
-	if ((*a)->data < (*a)->next->data
-		&& (*a)->next->data > (*a)->next->next->data)
-	{
-		ft_rra(a);
-		ft_sa(a);
-	}
-	if ((*a)->data > (*a)->next->data)
-		ft_sa(a);
-}
-
-void	sort_two(t_op **a)
-{
-	if ((*a)->data > (*a)->next->data)
-		ft_ra(a);
 }

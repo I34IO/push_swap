@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:06:32 by razouani          #+#    #+#             */
-/*   Updated: 2024/06/26 20:39:25 by razouani         ###   ########.fr       */
+/*   Updated: 2024/07/03 08:00:15 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ typedef struct s_op
 {
 	int			data;
 	int			index;
-	int			above_median;
 	struct s_op	*next;
 	struct s_op	*prev;
 	t_argu		argu;
@@ -68,11 +67,9 @@ int				list_size(t_op *list);
 int				get_iterations(t_op *stack);
 void			sort(t_op **stack_a, t_op **stack_b);
 void			ft_free_list(t_op *list);
-void			sort_three(t_op **a);
-void			sort_two(t_op **a);
-void			get_index_list(t_op *swap, char **split);
 int				count_arg_list(char **split);
 t_op			*found_last_list(t_op *swap);
-void	verif(t_op **a);
+int				find_min_index(t_op **a);
+void			simple_sort(t_op **a, t_op **b);
 
 #endif

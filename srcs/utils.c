@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 17:43:59 by razouani          #+#    #+#             */
-/*   Updated: 2024/07/03 07:43:36 by razouani         ###   ########.fr       */
+/*   Created: 2024/07/03 08:15:25 by razouani          #+#    #+#             */
+/*   Updated: 2024/07/03 08:16:05 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap_list(t_op **swap)
+int	find_min_index(t_op **a)
 {
-	int	tmp;
+	t_op	*tmp;
+	int		min;
 
-	if (!swap || !(*swap)->next)
+	tmp = *a;
+	min = tmp->data;
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+		if (min > tmp->data)
+			min = tmp->data;
+	}
+	return (min);
+}
+
+int	list_size(t_op *list)
+{
+	int	len;
+
+	if (!list)
 		return (0);
-	tmp = (*swap)->data;
-	(*swap)->data = (*swap)->next->data;
-	(*swap)->next->data = tmp;
-	return (1);
-}
-
-void	ft_sa(t_op **a)
-{
-	if (swap_list(a) == 1)
-		ft_printf("sa\n");
-}
-
-void	ft_sb(t_op **b)
-{
-	if (swap_list(b) == 1)
-		ft_printf("sb\n");
-}
-
-void	ft_ss(t_op **a, t_op **b)
-{
-	if (swap_list(a) == 1 && swap_list(b) == 1)
-		ft_printf("ss\n");
+	len = 1;
+	while (list->next)
+	{
+		list = list->next;
+		len++;
+	}
+	return (len);
 }
