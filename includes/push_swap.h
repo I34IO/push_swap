@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:06:32 by razouani          #+#    #+#             */
-/*   Updated: 2024/07/03 08:00:15 by razouani         ###   ########.fr       */
+/*   Updated: 2024/07/18 18:00:50 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,14 @@ void			ft_rra(t_op **a);
 void			ft_rrb(t_op **b);
 void			ft_rrr(t_op **a, t_op **b);
 int				list_size(t_op *list);
-int				get_iterations(t_op *stack);
+//int				get_iterations(t_op *stack);
 void			sort(t_op **stack_a, t_op **stack_b);
 void			ft_free_list(t_op *list);
 int				count_arg_list(char **split);
 t_op			*found_last_list(t_op *swap);
 int				find_min_index(t_op **a);
 void			simple_sort(t_op **a, t_op **b);
+int				find_min_index_boost(t_op **a, int old_min);
+
 
 #endif

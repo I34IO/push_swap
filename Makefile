@@ -1,6 +1,6 @@
 NAME = push_swap
 
-C_FILES = main.c argument.c list.c swap.c push.c rotate.c reverse.c algo.c utils.c simple_sort.c 
+C_FILES = main.c argument.c list.c swap.c push.c rotate.c reverse.c algo.c simple_sort.c utils.c
 
 SRCS = $(addprefix srcs/,$(C_FILES))
 

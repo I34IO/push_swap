@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:40:47 by zizi              #+#    #+#             */
-/*   Updated: 2024/07/03 08:04:34 by razouani         ###   ########.fr       */
+/*   Updated: 2024/07/09 17:39:41 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,14 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	a = init_list(vars, a);
-	if (ac <= 6)
-	{
+	if (list_size(a) <= 5)
 		simple_sort(&a, &b);
-		ft_free_list(b);
-	}
 	else
 		sort(&a, &b);
 	ft_free(vars->split_argu, ft_lenpp(vars->split_argu));
 	free(vars);
 	ft_free_list(a);
+	if (b)
+		ft_free_list(b);
 	return (0);
 }
