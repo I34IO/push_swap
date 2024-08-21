@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:45:40 by zizi              #+#    #+#             */
-/*   Updated: 2024/07/11 17:21:42 by razouani         ###   ########.fr       */
+/*   Updated: 2024/07/19 16:16:18 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,8 @@ int	check_sign(char *str)
 		if ((i == 0) && (str[0] == '+' || str[0] == '-'))
 			i++;
 		if (str[i] >= '0' && str[i] <= '9')
-			i++;		
-		else 
+			i++;
+		else
 			return (0);
 	}
 	return (1);

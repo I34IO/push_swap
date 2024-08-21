@@ -6,7 +6,7 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 08:15:25 by razouani          #+#    #+#             */
-/*   Updated: 2024/07/18 19:06:58 by razouani         ###   ########.fr       */
+/*   Updated: 2024/07/19 16:15:09 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	find_min_index(t_op **a)
 	}
 	return (min);
 }
+
 int	find_min_index_boost(t_op **a, int old_min)
 {
 	t_op	*tmp;

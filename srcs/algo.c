@@ -6,40 +6,17 @@
 /*   By: razouani <razouani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 17:22:02 by razouani          #+#    #+#             */
-/*   Updated: 2024/07/18 18:54:30 by razouani         ###   ########.fr       */
+/*   Updated: 2024/07/19 16:18:48 by razouani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-// commande ARG=$(shuf -i 0-500 -n 100 | tr '\n' ' '); ./push_swap $ARG | wc -l  
-
-int	get_iterations(t_op *stack)
-{
-	int	biggest_index;
-	int	iterations;
-	int	i;
-
-	biggest_index = stack->index;
-	iterations = 0;
-	i = 0;
-	while (stack)
-	{
-		if (stack->index > biggest_index)
-			biggest_index = stack->index;
-		stack = stack->next;
-		i++;
-	}
-	while ((biggest_index >> iterations) != 0)
-		iterations++;
-	return (iterations);
-}
+#include "push_swap.h" 
 
 static void	normalize(t_op *stack_a)
 {
-	int i;
-	int tmp;
-	t_op *node;
+	int		i;
+	int		tmp;
+	t_op	*node;
 
 	i = 0;
 	tmp = INT_MIN;
@@ -54,6 +31,28 @@ static void	normalize(t_op *stack_a)
 	}
 }
 
+int	get_iterations(t_op *stack)
+{
+	int	biggest_index;
+	int	iterations;
+	int	i;
+
+	biggest_index = stack->index;
+	iterations = 0;
+	i = 0;
+	normalize(stack);
+	while (stack)
+	{
+		if (stack->index > biggest_index)
+			biggest_index = stack->index;
+		stack = stack->next;
+		i++;
+	}
+	while ((biggest_index >> iterations) != 0)
+		iterations++;
+	return (iterations);
+}
+
 void	sort(t_op **stack_a, t_op **stack_b)
 {
 	t_op	*curr_a;
@@ -63,7 +62,6 @@ void	sort(t_op **stack_a, t_op **stack_b)
 	int		iterations;
 
 	i = 0;
-	normalize(*stack_a);
 	curr_a = *stack_a;
 	size = list_size(curr_a);
 	iterations = get_iterations(*stack_a);
